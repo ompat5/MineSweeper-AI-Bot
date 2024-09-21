@@ -11,3 +11,4 @@ A computer bot that plays Minesweeper using different agents. This project imple
 - Random Solver: Uses heuristics for random cell selection when no further inferences are possible. (Heuristic-Based Exploration: The agent minimizes risk by using probability heuristics when selecting unknown cells.)
 
 # Demo
+![](MineSweeperDemo.gif)
