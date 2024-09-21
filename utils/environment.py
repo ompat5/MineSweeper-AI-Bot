@@ -1,7 +1,7 @@
 import matplotlib
 matplotlib.use('tkAgg')
 from pylab import *
-from variable import Variable
+from utils.variable import Variable
 from scipy.signal import convolve2d
 from matplotlib.patches import RegularPolygon
 import matplotlib.gridspec as gridspec
@@ -21,7 +21,7 @@ class Environment():
     def __init__(self,
                  n = DimensionOfGround,
                  mine_density = MineDensity,
-                 visual = False,
+                 visual = True,
                  end_game_on_mine_hit = True):
         self.n = n
         self.number_of_mines = int(n * n * mine_density)
@@ -104,7 +104,9 @@ class Environment():
     def generate_environment(self):
 
         # Create the figure and axes
-        self.fig = plt.figure(figsize = ((self.n + 2) / 3., (self.n + 2) / 3.))
+        self.fig = plt.figure(figsize = ((self.n + 2) / 2., (self.n + 2) / 2.))
+        mng = plt.get_current_fig_manager()
+        mng.full_screen_toggle()
 
         # Do not create the figure if self.visual is False
         if not self.visual:
